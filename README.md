@@ -53,3 +53,7 @@ The calculated tax amount will be displayed over a Modal.
 
 ## Note
 This is a simplified example for demonstration purposes. Real-world tax calculations might involve different slabs, deductions, and other factors.
+
+## Test Passes: 
+
+![alt text](<Screenshot from 2024-04-14 16-56-39-1.png>)
