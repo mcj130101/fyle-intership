@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary d-none"
+      id="modalBtn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+          <div class="modal-body">
+            <div id="taxDiv" class="container p-5">
+              <h2 class="text-center text-secondary">
+                Your Overall income will be
+              </h2>
+              <h3 id="taxHolder" class="text-center text-secondary">
+                12,00,000
+              </h3>
+              <h6 class="text-center text-secondary">after tax deductions</h6>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mb-5">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container form-container container-fluid">
+      <div class="border border-secondary-subtle border-2 w-50 pt-5 px-4">
+        <form>
+          <div class="form-group mb-2">
+            <label class="form-label" for="grossIncome"
+              >Enter gross annual income
+              <span>
+                <i
+                  class="bi bi-question-circle"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="Gross anual income is your total salary in a year before any deductions"
+                ></i>
+              </span>
+            </label>
+            <div class="input-area">
+              <input
+                id="grossIncome"
+                class="form-control p-2"
+                type="text"
+                name="grossIncome"
+                placeholder="Enter gross anual income"
+              />
+              <i
+                class="bi bi-info-circle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Please Enter Numbers Only"
+              ></i>
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <label class="form-label" for="sideIncome"
+              >Enter extra income
+              <span>
+                <i
+                  class="bi bi-question-circle"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="Total income from source other than main source"
+                ></i> </span
+            ></label>
+            <div class="input-area">
+              <input
+                id="sideIncome"
+                class="form-control p-2"
+                type="text"
+                name="sideIncome"
+                placeholder="Enter extra income from other sources"
+              />
+              <i
+                class="bi bi-info-circle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Please Enter Numbers Only"
+              ></i>
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <label class="form-label" for="ageGroup"
+              >Enter age group
+              <span>
+                <i
+                  class="bi bi-question-circle"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="Select your age group from dropdown menu."
+                ></i> </span
+            ></label>
+            <select class="form-select" id="ageGroup">
+              <option value="less">&lt;40</option>
+              <option value="mid">&ge; 40 & &lt; 60</option>
+              <option value="greater">&ge; 60</option>
+            </select>
+          </div>
+
+          <div class="form-group my-2">
+            <label class="form-label" for="incomeDeductable"
+              >Enter total applicable deductions
+              <span>
+                <i
+                  class="bi bi-question-circle"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="Any deductables applicable on your income"
+                ></i> </span
+            ></label>
+            <div class="input-area">
+              <input
+                id="inputDeductable"
+                class="form-control p-2"
+                type="text"
+                name="inputDeductable"
+                placeholder="Enter total applicable deductions"
+              />
+              <i
+                class="bi bi-info-circle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Please Enter Numbers Only"
+              ></i>
+            </div>
+          </div>
+
+          <div class="form-group d-grid my-5">
+            <button id="submitBtn" class="btn btn-primary" type="button">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
+  </body>
+</html>
