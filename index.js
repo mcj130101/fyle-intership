@@ -13,7 +13,7 @@ function validation(e) {
   const input = e.target.id;
   const value = e.target.value;
   const info = document.getElementById(input).nextElementSibling;
-  if (input.length <= 0 || isNaN(value)) {
+  if (input.length <= 0 || isNaN(value) || value < 0) {
     info.style.display = "block";
     submitBtn.disabled = true;
   } else {
